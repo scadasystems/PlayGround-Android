@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">PlayExoplayer</string>
 
-<!--    <string name="media_url">https://commondatastorage.googleapis.com/gtv-videos-bucket-bucket/sample/BigBuckBunny.mp4</string>-->
     <string name="media_url">https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4</string>
-    <string name="media_dog">asset:///dog.mp4</string>
-    <string name="media_cat">asset:///cat.mp4</string>
-    <string name="media_rabbit">asset:///rabbit.mp4</string>
+    <string name="media_perfume">asset:///perfume.mp4</string>
+    <string name="media_smoothie">asset:///smoothie.mp4</string>
+    <string name="media_cosmetic">asset:///cosmetic.mp4</string>
+    <string name="media_wine">asset:///wine.mp4</string>
 </resources>

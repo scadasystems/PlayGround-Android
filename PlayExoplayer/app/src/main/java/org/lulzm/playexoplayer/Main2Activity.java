@@ -1,23 +1,17 @@
 package org.lulzm.playexoplayer;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import org.lulzm.playexoplayer.fragments.MainFragment;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
-    private ImageButton btn_dog, btn_cat, btn_rabbit;
+    private ImageButton btn_perfume, btn_smoothie, btn_cosmetic, btn_wine;
     private Animation animation;
 
     @Override
@@ -26,12 +20,27 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        btn_dog = findViewById(R.id.btn_dog);
-        btn_dog.setOnClickListener(this);
-        btn_cat = findViewById(R.id.btn_cat);
-        btn_cat.setOnClickListener(this);
-        btn_rabbit = findViewById(R.id.btn_rabbit);
-        btn_rabbit.setOnClickListener(this);
+//        int uiOptions = getWindow().getDecorView().getSystemUiVisibility();
+//        int newUiOptions = uiOptions;
+//        boolean isImmersiveModeEnabled = ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
+//        if (isImmersiveModeEnabled) {
+//            Log.i("Is on?", "Turning immersive mode mode off. ");
+//        } else {
+//            Log.i("Is on?", "Turning immersive mode mode on.");
+//        }
+//        newUiOptions ^= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+//        newUiOptions ^= View.SYSTEM_UI_FLAG_FULLSCREEN;
+//        newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+//        getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
+
+        btn_perfume = findViewById(R.id.btn_perfume);
+        btn_perfume.setOnClickListener(this);
+        btn_smoothie = findViewById(R.id.btn_smoothie);
+        btn_smoothie.setOnClickListener(this);
+        btn_cosmetic = findViewById(R.id.btn_cosmetic);
+        btn_cosmetic.setOnClickListener(this);
+        btn_wine = findViewById(R.id.btn_wine);
+        btn_wine.setOnClickListener(this);
     }
 
     @Override
@@ -39,17 +48,19 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         MainFragment mediaFragment = new MainFragment();
         Bundle bundle = new Bundle();
         switch (v.getId()) {
-            case R.id.btn_dog:
-                animation = AnimationUtils.loadAnimation(this, R.anim.animation);
-                btn_cat.startAnimation(animation);
-                bundle.putString("media_url", getString(R.string.media_dog));
+            case R.id.btn_perfume:
+//                animation = AnimationUtils.loadAnimation(this, R.anim.animation);
+//                btn_smoothie.startAnimation(animation);
+                bundle.putString("media_url", getString(R.string.media_perfume));
                 break;
-            case R.id.btn_cat:
-                bundle.putString("media_url", getString(R.string.media_cat));
+            case R.id.btn_smoothie:
+                bundle.putString("media_url", getString(R.string.media_smoothie));
                 break;
-            case R.id.btn_rabbit:
-                bundle.putString("media_url", getString(R.string.media_rabbit));
+            case R.id.btn_cosmetic:
+                bundle.putString("media_url", getString(R.string.media_cosmetic));
                 break;
+            case R.id.btn_wine:
+                bundle.putString("media_url", getString(R.string.media_wine));
         }
         mediaFragment.setArguments(bundle);
 
