@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.Player;
@@ -34,10 +36,8 @@ public class MainFragment extends Fragment {
     private int currentWindow = 0;
     private long playBackPosition = 0;
 
-
     public MainFragment() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,7 +56,14 @@ public class MainFragment extends Fragment {
         player = ExoPlayerFactory.newSimpleInstance(requireActivity());
         exoPlayerView.setPlayer(player);
 
-        Uri uri = Uri.parse(getString(R.string.media_url));
+        String media_url = null;
+        if (getArguments() != null) {
+            media_url = getArguments().getString("media_url");
+        } else {
+            media_url = getString(R.string.media_url);
+        }
+
+        Uri uri = Uri.parse(media_url);
         MediaSource mediaSource = buildMediaSource(uri);
 
         player.setPlayWhenReady(playWhenReady);
@@ -82,7 +89,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        hideSystemUi();
+//        hideSystemUi();
         if ((Util.SDK_INT < 24 || player == null)) initializePlayer();
     }
 
@@ -98,16 +105,17 @@ public class MainFragment extends Fragment {
         if (Util.SDK_INT >= 24) releasePlayer();
     }
 
-    @SuppressLint("InlinedApi")
-    private void hideSystemUi() {
-        exoPlayerView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LOW_PROFILE
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-    }
+    /* UI 숨기기 */
+//    @SuppressLint("InlinedApi")
+//    private void hideSystemUi() {
+//        exoPlayerView.setSystemUiVisibility(
+//                View.SYSTEM_UI_FLAG_LOW_PROFILE
+//                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+//    }
 
     private void releasePlayer() {
         if (player != null) {
