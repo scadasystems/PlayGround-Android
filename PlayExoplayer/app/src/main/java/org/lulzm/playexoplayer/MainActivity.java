@@ -1,32 +1,35 @@
 package org.lulzm.playexoplayer;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentTransaction;
 
 import org.lulzm.playexoplayer.fragments.MainFragment;
-
-import static org.lulzm.playexoplayer.Utils.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final int PERMISSION_REQUEST_STORAGE = 0;
     private DownloadController downloadController;
 
     private ImageButton btn_perfume, btn_smoothie, btn_cosmetic, btn_wine;
+    private ImageView iv_update_background;
+    private CardView cv_update;
     private Animation animation;
     private String TAG = getClass().getSimpleName();
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -43,8 +46,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 Log.w(TAG, "다운로드 완료");
                 downloadController.enqueueDownload();
+                iv_update_background.setVisibility(View.VISIBLE);
+                cv_update.setVisibility(View.VISIBLE);
             }
-        }, 4000);
+        }, 5000);
+
+        // DPI 측정
+        DisplayMetrics metirs = new DisplayMetrics();
+        WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        windowManager.getDefaultDisplay().getMetrics(metirs);
+        Log.w(TAG, "DPI = " + metirs.densityDpi);
 
         btn_perfume = findViewById(R.id.btn_perfume);
         btn_perfume.setOnClickListener(this);
@@ -54,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_cosmetic.setOnClickListener(this);
         btn_wine = findViewById(R.id.btn_wine);
         btn_wine.setOnClickListener(this);
+        iv_update_background = findViewById(R.id.iv_update_background);
+        cv_update = findViewById(R.id.cv_update);
     }
 
     @Override

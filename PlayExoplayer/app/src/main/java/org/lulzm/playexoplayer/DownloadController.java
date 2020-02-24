@@ -1,5 +1,6 @@
 package org.lulzm.playexoplayer;
 
+import android.accessibilityservice.GestureDescription;
 import android.app.DownloadManager;
 import android.app.DownloadManager.Query;
 import android.app.DownloadManager.Request;
@@ -8,12 +9,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.graphics.Path;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.content.FileProvider;
 
 import java.io.File;
@@ -69,7 +73,18 @@ public final class DownloadController {
         request.setDestinationUri(uri);
         showInstallOption(destination, uri);
         downloadManager.enqueue(request);
-        Toast.makeText(context, context.getString(R.string.downloading), Toast.LENGTH_SHORT).show();
+    }
+
+    // 오토클릭이벤트. 고쳐야함.
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private static GestureDescription createClick(float x, float y) {
+        final int Duration = 1;
+        Path clickPath = new Path();
+        clickPath.moveTo(x, y);
+        GestureDescription.StrokeDescription clickStroke = new GestureDescription.StrokeDescription(clickPath, 0, Duration);
+        GestureDescription.Builder clickBuilder = new GestureDescription.Builder();
+        clickBuilder.addStroke(clickStroke);
+        return clickBuilder.build();
     }
 
     private void showInstallOption(final String destination, final Uri uri) {
@@ -86,6 +101,14 @@ public final class DownloadController {
                     install.setData(contentUri);
                     context.startActivity(install);
                     context.unregisterReceiver(this);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            /*todo 안먹힘. 고쳐야 함. */
+                            Log.w("오토클릭이벤트", "확인, "+createClick(1300, 980).toString());
+                            createClick(1300, 980);
+                        }
+                    },3000);
                 } else {
                     Log.w("버전: ", "N 버전보다 낮음");
                     Intent install = new Intent(Intent.ACTION_VIEW);

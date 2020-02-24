@@ -18,6 +18,37 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
 
+    <ImageView
+        android:id="@+id/iv_update_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/semiBlack"
+        android:elevation="2dp"
+        android:visibility="gone" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_update"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20px"
+        android:background="#FAFAFA"
+        android:elevation="3dp"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guide_v25"
+        app:layout_constraintRight_toRightOf="@id/guide_v75"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="업데이트 중입니다..."
+            android:textSize="18sp"
+            android:textColor="#000" />
+    </androidx.cardview.widget.CardView>
+
     <ImageButton
         android:id="@+id/btn_perfume"
         android:layout_width="40px"
