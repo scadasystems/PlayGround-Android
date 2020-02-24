@@ -3,16 +3,99 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="158px"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
+
+    <ImageButton
+        android:id="@+id/btn_perfume"
+        android:layout_width="40px"
+        android:layout_height="40px"
+        android:background="#00000000"
+        android:elevation="1dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/perfume"
+        app:layout_constraintBottom_toBottomOf="@id/guide_h75"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/guide_v25"
+        app:layout_constraintTop_toTopOf="@id/guide_h75" />
+
+    <ImageButton
+        android:id="@+id/btn_smoothie"
+        android:layout_width="40px"
+        android:layout_height="40px"
+        android:background="#00000000"
+        android:elevation="1dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/smoothie"
+        app:layout_constraintBottom_toBottomOf="@id/guide_h75"
+        app:layout_constraintLeft_toLeftOf="@id/guide_v25"
+        app:layout_constraintRight_toRightOf="@id/guide_v50"
+        app:layout_constraintTop_toTopOf="@id/guide_h75" />
+
+    <ImageButton
+        android:id="@+id/btn_cosmetic"
+        android:layout_width="40px"
+        android:layout_height="40px"
+        android:background="#00000000"
+        android:elevation="1dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cosmetic"
+        app:layout_constraintBottom_toBottomOf="@id/guide_h75"
+        app:layout_constraintLeft_toLeftOf="@id/guide_v50"
+        app:layout_constraintRight_toRightOf="@id/guide_v75"
+        app:layout_constraintTop_toTopOf="@id/guide_h75" />
+
+    <ImageButton
+        android:id="@+id/btn_wine"
+        android:layout_width="40px"
+        android:layout_height="40px"
+        android:background="#00000000"
+        android:elevation="1dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/wine"
+        app:layout_constraintBottom_toBottomOf="@id/guide_h75"
+        app:layout_constraintLeft_toLeftOf="@id/guide_v75"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide_h75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_h75"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v25"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v50"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v75"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

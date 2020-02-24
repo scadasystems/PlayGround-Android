@@ -6,4 +6,10 @@
     <string name="media_smoothie">asset:///smoothie.mp4</string>
     <string name="media_cosmetic">asset:///cosmetic.mp4</string>
     <string name="media_wine">asset:///wine.mp4</string>
+
+    <string name="downloading">업데이트 중...</string>
+    <string name="title_file_download">APK 업데이트 중...</string>
+    <string name="storage_access_required">저장소 권한이 필요합니다.</string>
+    <string name="storage_permission_denied">저장소 권한을 거부했습니다.</string>
+    <string name="ok">확인</string>
 </resources>
