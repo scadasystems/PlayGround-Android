@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         hideNavigationBar();
 
-        String apkUrl = "https://androidwave.com/source/apk/app-pagination-recyclerview.apk";
+        String apkUrl = "https://github.com/scadasystems/PlayGround-Android/raw/master/PlayExoplayer/app/src/APK/DownloadExample.apk";
         downloadController = new DownloadController(this, apkUrl);
 
         new Handler().postDelayed(new Runnable() {
