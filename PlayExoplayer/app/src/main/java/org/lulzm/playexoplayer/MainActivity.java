@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String apkUrl = "https://github.com/scadasystems/PlayGround-Android/raw/master/PlayExoplayer/app/src/APK/DownloadExample.apk";
         downloadController = new DownloadController(this, apkUrl);
-
+/*
+    // 앱 자동 업데이트 연습
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 cv_update.setVisibility(View.VISIBLE);
             }
         }, 5000);
+*/
 
         // DPI 측정
         DisplayMetrics metirs = new DisplayMetrics();
