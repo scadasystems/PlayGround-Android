@@ -8,10 +8,8 @@ import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 
 
-class DragDropActivity : AppCompatActivity() {
+class DragDropActivity : AppCompatActivity(), View.OnTouchListener {
     private val TAG = this::class.java.simpleName
-
-    private val views: Array<View> = emptyArray()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
