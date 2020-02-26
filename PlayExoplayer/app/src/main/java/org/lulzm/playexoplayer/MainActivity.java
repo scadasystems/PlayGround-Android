@@ -1,9 +1,9 @@
 package org.lulzm.playexoplayer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton btn_perfume, btn_smoothie, btn_cosmetic, btn_wine;
     private ImageView iv_update_background;
     private CardView cv_update;
+    private View move;
     private Animation animation;
     private String TAG = getClass().getSimpleName();
 
@@ -38,9 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         hideNavigationBar();
 
-        String apkUrl = "https://github.com/scadasystems/PlayGround-Android/raw/master/PlayExoplayer/app/src/APK/DownloadExample.apk";
+        String apkUrl = "https://github.com/scadasystems/PlayGround-Android/raw/mater/PlayExoplayer/app/src/APK/DownloadExample.apk";
         downloadController = new DownloadController(this, apkUrl);
 
+    /* 5초뒤 업데이트
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 cv_update.setVisibility(View.VISIBLE);
             }
         }, 5000);
+    */
 
         // DPI 측정
         DisplayMetrics metirs = new DisplayMetrics();
@@ -67,6 +70,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_wine.setOnClickListener(this);
         iv_update_background = findViewById(R.id.iv_update_background);
         cv_update = findViewById(R.id.cv_update);
+        move = findViewById(R.id.move);
+
+        move.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, DragDropActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
     }
 
     @Override
@@ -87,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_wine:
                 bundle.putString("media_url", getString(R.string.media_wine));
+                break;
         }
         mediaFragment.setArguments(bundle);
 

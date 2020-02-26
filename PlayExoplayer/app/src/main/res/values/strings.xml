@@ -12,4 +12,7 @@
     <string name="storage_access_required">저장소 권한이 필요합니다.</string>
     <string name="storage_permission_denied">저장소 권한을 거부했습니다.</string>
     <string name="ok">확인</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
