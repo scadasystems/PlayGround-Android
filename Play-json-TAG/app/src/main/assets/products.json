@@ -1,0 +1,48 @@
+{
+    "products":  [
+        {
+            "field1": "252525",
+            "title": "apple",
+            "price": "1600",
+            "salePrice": "1400",
+            "origin": "KOREA",
+            "company": "A",
+            "articleId": "78011152",
+            "left": "150",
+            "type": "tag2"
+        },
+        {
+            "field1": "353535",
+            "title": "banana",
+            "price": "4000",
+            "salePrice": "4000",
+            "origin": "KOREA",
+            "company": "B",
+            "articleId": "78011153",
+            "left": "150",
+            "type": "tag2"
+        },
+        {
+            "field1": "454545",
+            "title": "carrot",
+            "price": "2000",
+            "salePrice": "1600",
+            "origin": "KOREA",
+            "company": "C",
+            "articleId": "78011154",
+            "left": "150",
+            "type": "tag2"
+        },
+        {
+            "field1": "454545",
+            "title": "date",
+            "price": "500",
+            "salePrice": "500",
+            "origin": "KOREA",
+            "company": "D",
+            "articleId": "78011155",
+            "left": "150",
+            "type": "tag2"
+        }
+    ]
+}
