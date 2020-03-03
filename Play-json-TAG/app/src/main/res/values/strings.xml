@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PlayJsonTag</string>
+    <string name="textSaleSize">14sp</string>
 </resources>

@@ -8,14 +8,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/price_tag1"
-        android:layout_width="330px"
-        android:layout_height="120px"
+        android:layout_width="250px"
+        android:layout_height="100px"
         android:layout_margin="10px"
+        android:elevation="1dp"
         android:orientation="vertical"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -52,10 +53,11 @@
                 android:layout_height="30px"
                 android:layout_marginLeft="10px"
                 android:background="#ff1100"
+                android:includeFontPadding="false"
                 android:text="SALE"
                 android:textAlignment="center"
                 android:textColor="#FFF"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_field1" />
@@ -65,8 +67,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:textSize="8sp"
                 android:textAlignment="center"
+                android:textSize="8sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale1"
                 app:layout_constraintRight_toRightOf="@id/tv_sale1"
                 app:layout_constraintTop_toBottomOf="@id/tv_sale1"
@@ -97,29 +99,30 @@
                 android:id="@+id/tv_origin1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="6sp"
                 android:textAlignment="center"
+                android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale1"
                 app:layout_constraintRight_toRightOf="@id/tv_sale1"
                 app:layout_constraintTop_toBottomOf="@id/divider1"
                 tools:text="origin" />
-            
+
             <TextView
                 android:id="@+id/tv_company1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="6sp"
                 android:textAlignment="center"
-                tools:text="company"
-                app:layout_constraintTop_toBottomOf="@id/tv_origin1"
+                android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale1"
-                app:layout_constraintRight_toRightOf="@id/tv_sale1"/>
+                app:layout_constraintRight_toRightOf="@id/tv_sale1"
+                app:layout_constraintTop_toBottomOf="@id/tv_origin1"
+                tools:text="company" />
 
             <ImageView
                 android:id="@+id/iv_barCode1"
                 android:layout_width="100px"
                 android:layout_height="20px"
-                android:layout_marginRight="35px"
+                android:layout_marginTop="1px"
+                android:layout_marginRight="20px"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider1" />
 
@@ -127,12 +130,13 @@
                 android:id="@+id/tv_barCode1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#fff"
                 android:includeFontPadding="false"
                 android:textAlignment="center"
                 android:textSize="5sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@id/iv_barCode1"
                 app:layout_constraintRight_toRightOf="@id/iv_barCode1"
-                app:layout_constraintTop_toBottomOf="@+id/iv_barCode1"
                 tools:text="barcode" />
 
 
@@ -142,14 +146,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/price_tag2"
-        android:layout_width="330px"
-        android:layout_height="120px"
+        android:layout_width="250px"
+        android:layout_height="100px"
         android:layout_margin="10px"
+        android:elevation="1dp"
         android:orientation="vertical"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guide_v25"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -189,7 +194,7 @@
                 android:text="SALE"
                 android:textAlignment="center"
                 android:textColor="#FFF"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_field2" />
@@ -199,8 +204,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:textSize="8sp"
                 android:textAlignment="center"
+                android:textSize="8sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale2"
                 app:layout_constraintRight_toRightOf="@id/tv_sale2"
                 app:layout_constraintTop_toBottomOf="@id/tv_sale2"
@@ -231,8 +236,8 @@
                 android:id="@+id/tv_origin2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="6sp"
                 android:textAlignment="center"
+                android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale2"
                 app:layout_constraintRight_toRightOf="@id/tv_sale2"
                 app:layout_constraintTop_toBottomOf="@id/divider2"
@@ -242,18 +247,19 @@
                 android:id="@+id/tv_company2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="6sp"
                 android:textAlignment="center"
-                tools:text="company"
-                app:layout_constraintTop_toBottomOf="@id/tv_origin2"
+                android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale2"
-                app:layout_constraintRight_toRightOf="@id/tv_sale2"/>
+                app:layout_constraintRight_toRightOf="@id/tv_sale2"
+                app:layout_constraintTop_toBottomOf="@id/tv_origin2"
+                tools:text="company" />
 
             <ImageView
                 android:id="@+id/iv_barCode2"
                 android:layout_width="100px"
                 android:layout_height="20px"
-                android:layout_marginRight="35px"
+                android:layout_marginTop="1px"
+                android:layout_marginRight="20px"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider2" />
 
@@ -261,12 +267,13 @@
                 android:id="@+id/tv_barCode2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#fff"
                 android:includeFontPadding="false"
                 android:textAlignment="center"
                 android:textSize="5sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@id/iv_barCode2"
                 app:layout_constraintRight_toRightOf="@id/iv_barCode2"
-                app:layout_constraintTop_toBottomOf="@+id/iv_barCode2"
                 tools:text="barcode" />
 
 
@@ -276,14 +283,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/price_tag3"
-        android:layout_width="330px"
-        android:layout_height="120px"
+        android:layout_width="250px"
+        android:layout_height="100px"
         android:layout_margin="10px"
+        android:elevation="1dp"
         android:orientation="vertical"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guide_v50"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -323,7 +331,7 @@
                 android:text="SALE"
                 android:textAlignment="center"
                 android:textColor="#FFF"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_field3" />
@@ -333,8 +341,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:textSize="8sp"
                 android:textAlignment="center"
+                android:textSize="8sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale3"
                 app:layout_constraintRight_toRightOf="@id/tv_sale3"
                 app:layout_constraintTop_toBottomOf="@id/tv_sale3"
@@ -365,8 +373,8 @@
                 android:id="@+id/tv_origin3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="6sp"
                 android:textAlignment="center"
+                android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale3"
                 app:layout_constraintRight_toRightOf="@id/tv_sale3"
                 app:layout_constraintTop_toBottomOf="@id/divider3"
@@ -376,18 +384,19 @@
                 android:id="@+id/tv_company3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="6sp"
                 android:textAlignment="center"
-                tools:text="company"
-                app:layout_constraintTop_toBottomOf="@id/tv_origin3"
+                android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale3"
-                app:layout_constraintRight_toRightOf="@id/tv_sale3"/>
+                app:layout_constraintRight_toRightOf="@id/tv_sale3"
+                app:layout_constraintTop_toBottomOf="@id/tv_origin3"
+                tools:text="company" />
 
             <ImageView
                 android:id="@+id/iv_barCode3"
                 android:layout_width="100px"
                 android:layout_height="20px"
-                android:layout_marginRight="35px"
+                android:layout_marginTop="1px"
+                android:layout_marginRight="20px"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider3" />
 
@@ -395,12 +404,13 @@
                 android:id="@+id/tv_barCode3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#fff"
                 android:includeFontPadding="false"
                 android:textAlignment="center"
                 android:textSize="5sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@id/iv_barCode3"
                 app:layout_constraintRight_toRightOf="@id/iv_barCode3"
-                app:layout_constraintTop_toBottomOf="@+id/iv_barCode3"
                 tools:text="barcode" />
 
 
@@ -410,14 +420,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/price_tag4"
-        android:layout_width="330px"
-        android:layout_height="120px"
+        android:layout_width="250px"
+        android:layout_height="100px"
         android:layout_margin="10px"
+        android:elevation="1dp"
         android:orientation="vertical"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guide_v75"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -457,7 +468,7 @@
                 android:text="SALE"
                 android:textAlignment="center"
                 android:textColor="#FFF"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_field4" />
@@ -467,8 +478,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:textSize="8sp"
                 android:textAlignment="center"
+                android:textSize="8sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale4"
                 app:layout_constraintRight_toRightOf="@id/tv_sale4"
                 app:layout_constraintTop_toBottomOf="@id/tv_sale4"
@@ -499,8 +510,8 @@
                 android:id="@+id/tv_origin4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="6sp"
                 android:textAlignment="center"
+                android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale4"
                 app:layout_constraintRight_toRightOf="@id/tv_sale4"
                 app:layout_constraintTop_toBottomOf="@id/divider4"
@@ -510,18 +521,19 @@
                 android:id="@+id/tv_company4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="6sp"
                 android:textAlignment="center"
-                tools:text="company"
-                app:layout_constraintTop_toBottomOf="@id/tv_origin4"
+                android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale4"
-                app:layout_constraintRight_toRightOf="@id/tv_sale4"/>
+                app:layout_constraintRight_toRightOf="@id/tv_sale4"
+                app:layout_constraintTop_toBottomOf="@id/tv_origin4"
+                tools:text="company" />
 
             <ImageView
                 android:id="@+id/iv_barCode4"
                 android:layout_width="100px"
                 android:layout_height="20px"
-                android:layout_marginRight="35px"
+                android:layout_marginTop="1px"
+                android:layout_marginRight="20px"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider4" />
 
@@ -529,18 +541,63 @@
                 android:id="@+id/tv_barCode4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#fff"
                 android:includeFontPadding="false"
                 android:textAlignment="center"
                 android:textSize="5sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@id/iv_barCode4"
                 app:layout_constraintRight_toRightOf="@id/iv_barCode4"
-                app:layout_constraintTop_toBottomOf="@+id/iv_barCode4"
                 tools:text="barcode" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/exo_first_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/guide_v25"
+        app:layout_constraintTop_toTopOf="parent"
+        app:resize_mode="zoom"
+        app:use_controller="false" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/exo_second_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guide_v25"
+        app:layout_constraintRight_toRightOf="@+id/guide_v50"
+        app:layout_constraintTop_toTopOf="parent"
+        app:resize_mode="zoom"
+        app:use_controller="false" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/exo_third_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guide_v50"
+        app:layout_constraintRight_toRightOf="@+id/guide_v75"
+        app:layout_constraintTop_toTopOf="parent"
+        app:resize_mode="zoom"
+        app:use_controller="false" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/exo_fourth_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guide_v75"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:resize_mode="zoom"
+        app:use_controller="false" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_v25"
@@ -563,4 +620,59 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
 
+    <View
+        android:id="@+id/btn_exit"
+        android:layout_width="40px"
+        android:layout_height="match_parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_finish"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:elevation="5dp"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="400px"
+            android:layout_height="100px"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="400px"
+            android:layout_height="100px"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintCircleRadius="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_finish_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="초 후에 종료됩니다."
+                android:textAlignment="center"
+                android:textColor="#000" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
