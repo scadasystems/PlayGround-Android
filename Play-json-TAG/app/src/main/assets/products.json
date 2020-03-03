@@ -3,11 +3,11 @@
         {
             "field1": "252525",
             "title": "Water Melon",
-            "price": "1600",
-            "salePrice": "1400",
+            "price": "10900",
+            "salePrice": "null",
             "origin": "KOREA",
             "company": "company1",
-            "articleId": "78011152",
+            "articleId": "2112270000005",
             "left": "150",
             "type": "tag2"
         },
