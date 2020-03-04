@@ -20,8 +20,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="2dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/tv_field1"
@@ -89,7 +88,7 @@
                 android:id="@+id/divider1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#000"
+                android:background="#40000000"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -100,6 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale1"
                 app:layout_constraintRight_toRightOf="@id/tv_sale1"
@@ -111,6 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale1"
                 app:layout_constraintRight_toRightOf="@id/tv_sale1"
@@ -121,7 +122,7 @@
                 android:id="@+id/iv_barCode1"
                 android:layout_width="100px"
                 android:layout_height="20px"
-                android:layout_marginTop="1px"
+                android:layout_marginTop="4px"
                 android:layout_marginRight="20px"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider1" />
@@ -158,8 +159,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="2dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/tv_field2"
@@ -226,7 +226,7 @@
                 android:id="@+id/divider2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#000"
+                android:background="#40000000"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -237,6 +237,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale2"
                 app:layout_constraintRight_toRightOf="@id/tv_sale2"
@@ -248,6 +249,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale2"
                 app:layout_constraintRight_toRightOf="@id/tv_sale2"
@@ -258,7 +260,7 @@
                 android:id="@+id/iv_barCode2"
                 android:layout_width="100px"
                 android:layout_height="20px"
-                android:layout_marginTop="1px"
+                android:layout_marginTop="4px"
                 android:layout_marginRight="20px"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider2" />
@@ -295,8 +297,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="2dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/tv_field3"
@@ -363,7 +364,7 @@
                 android:id="@+id/divider3"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#000"
+                android:background="#40000000"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -374,6 +375,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale3"
                 app:layout_constraintRight_toRightOf="@id/tv_sale3"
@@ -385,6 +387,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale3"
                 app:layout_constraintRight_toRightOf="@id/tv_sale3"
@@ -395,7 +398,7 @@
                 android:id="@+id/iv_barCode3"
                 android:layout_width="100px"
                 android:layout_height="20px"
-                android:layout_marginTop="1px"
+                android:layout_marginTop="4px"
                 android:layout_marginRight="20px"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider3" />
@@ -432,8 +435,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="2dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/tv_field4"
@@ -500,7 +502,7 @@
                 android:id="@+id/divider4"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#000"
+                android:background="#40000000"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -511,6 +513,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale4"
                 app:layout_constraintRight_toRightOf="@id/tv_sale4"
@@ -522,6 +525,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textColor="#000"
                 android:textSize="6sp"
                 app:layout_constraintLeft_toLeftOf="@id/tv_sale4"
                 app:layout_constraintRight_toRightOf="@id/tv_sale4"
@@ -532,7 +536,7 @@
                 android:id="@+id/iv_barCode4"
                 android:layout_width="100px"
                 android:layout_height="20px"
-                android:layout_marginTop="1px"
+                android:layout_marginTop="4px"
                 android:layout_marginRight="20px"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider4" />
@@ -675,4 +679,5 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

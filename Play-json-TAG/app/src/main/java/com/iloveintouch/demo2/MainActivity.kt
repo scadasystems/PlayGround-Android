@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.Color.BLACK
 import android.graphics.Color.TRANSPARENT
 import android.graphics.Paint
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.MotionEvent
@@ -29,7 +30,46 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     private val TAG = MainActivity::class.java.simpleName
     private val playerViews = arrayOfNulls<PlayerView>(4)
-    private val player: SimpleExoPlayer? = null
+    // Exoplayer 변수
+//    private var playWhenReady = true
+//    private var currentWindow = 0
+//    private var playbackPostion = 0L
+    private lateinit var player: SimpleExoPlayer
+
+    override fun onStart() {
+        super.onStart()
+        if (Build.VERSION.SDK_INT > 23) {
+            exo_play_start()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (Build.VERSION.SDK_INT <= 23) {
+            exo_play_start()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (Build.VERSION.SDK_INT > 23) {
+            if (player.isPlaying) releasePlayer()
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        if (Build.VERSION.SDK_INT > 23) {
+            if (player.isPlaying) releasePlayer()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (Build.VERSION.SDK_INT > 23) {
+            if (player.isPlaying) releasePlayer()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -143,8 +183,8 @@ class MainActivity : AppCompatActivity() {
                             bitmap = encodeAsBitmap(
                                 productList[data].articleId,
                                 BarcodeFormat.CODE_128,
-                                1100,
-                                180
+                                1500,
+                                330
                             )
                             data_barCodeImage.setImageBitmap(bitmap)
                             // 바코드 이미지 넣기
@@ -158,12 +198,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 바코드 이미지 생성
-    private fun encodeAsBitmap(
-        contents: String?,
-        format: BarcodeFormat?,
-        img_width: Int,
-        img_height: Int
-    ): Bitmap? {
+    private fun encodeAsBitmap(contents: String?, format: BarcodeFormat?, img_width: Int, img_height: Int): Bitmap? {
         val contentsToEncode = contents ?: return null
         var hints: MutableMap<EncodeHintType?, Any?>? = null
         val encoding = guessAppropriateEncoding(contentsToEncode)
@@ -205,49 +240,37 @@ class MainActivity : AppCompatActivity() {
     }
     // end
 
-    private fun exo_video_route(index: Int): String {
-        var asset_videos = arrayOf("first_video", "second_video", "third_video", "fourth_video")
-        var asset_route = "asset:///${asset_videos[index]}.mp4"
-        return asset_route
-    }
-
     private fun exo_play_start() {
-        val video_view = arrayOf(
-            "exo_first_view",
-            "exo_second_view",
-            "exo_third_view",
-            "exo_fourth_view"
-        )
+        /* 1st route */
+//        fun exo_video_route(index: Int): String {
+//            var asset_videos = arrayOf("first_video", "second_video", "third_video", "fourth_video")
+//            var asset_route = "asset:///${asset_videos[index]}.mp4"
+//            return asset_route
+//        }
+//        val video_view = arrayOf(
+//            "exo_first_view",
+//            "exo_second_view",
+//            "exo_third_view",
+//            "exo_fourth_view"
+//        )
+//        for (i in video_view.indices) {
+//            val temp = resources.getIdentifier(video_view[i], "id", packageName)
+//            playerViews[i] = findViewById(temp)
+//            initializePlayer(applicationContext, playerViews[i], exo_video_route(i))
+//        }
+        /* 1st route */
 
-        for (i in video_view.indices) {
-            val temp = resources.getIdentifier(video_view[i], "id", packageName)
-            playerViews[i] = findViewById(temp)
-            initializePlayer(applicationContext, playerViews[i], exo_video_route(i))
-        }
+        /* 2nd route */
+        val asset_first_route = "asset:///first_video.mp4"
+        val asset_second_route = "asset:///second_video.mp4"
+        val asset_third_route = "asset:///third_video.mp4"
+        val asset_fourth_route = "asset:///fourth_video.mp4"
+
+        initializePlayer(applicationContext, exo_first_view, asset_first_route)
+        initializePlayer(applicationContext, exo_second_view, asset_second_route)
+        initializePlayer(applicationContext, exo_third_view, asset_third_route)
+        initializePlayer(applicationContext, exo_fourth_view, asset_fourth_route)
+        /* 2nd route */
     }
 
-    override fun onStart() {
-        super.onStart()
-        if (player == null) exo_play_start()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        releasePlayer()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        if (player == null) exo_play_start()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        releasePlayer()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        releasePlayer()
-    }
 }

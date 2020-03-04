@@ -13,7 +13,9 @@ import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.ui.PlayerView
+import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import com.google.android.exoplayer2.util.Util
 
 /*********************************************************
  *   ,--.           ,--.       ,--.   ,--.
@@ -31,37 +33,37 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
  * E-mail : redsmurf@lulzm.org
  *********************************************************/
 
-private var player: SimpleExoPlayer? = null
+private lateinit var player: SimpleExoPlayer
+private lateinit var mediaSource: MediaSource
 private var playWhenReady = true
 private var currentWindow = 0
-private var playBackPosition: Long = 0
+private var playBackPosition = 0L
 
-fun initializePlayer(context: Context, exoPlayerView: PlayerView?, media_url: String) {
+fun initializePlayer(context: Context, exoPlayerView: PlayerView, media_url: String) {
 //    player = ExoPlayerFactory.newSimpleInstance(context)
     player = SimpleExoPlayer.Builder(context).build()
-    exoPlayerView?.player = player
+    exoPlayerView.player = player
+
+    val dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(context, Util.getUserAgent(context, "PlayJsonTag"))
 
     val uri = Uri.parse(media_url)
-    val mediaSource = buildMediaSource(context, uri)
-    player!!.playWhenReady = playWhenReady
-    player!!.seekTo(currentWindow, playBackPosition)
-    player!!.prepare(mediaSource, false, false)
-    player!!.repeatMode = Player.REPEAT_MODE_ONE
+    val videoSource: MediaSource = ProgressiveMediaSource.Factory(dataSourceFactory)
+        .createMediaSource(uri)
+//    player.playWhenReady = playWhenReady
+//    player.seekTo(currentWindow, playBackPosition)
+    player.playWhenReady = playWhenReady
+    player.prepare(videoSource)
+    player.repeatMode = Player.REPEAT_MODE_ONE
 }
 
 fun buildMediaSource(context: Context, uri: Uri?): MediaSource {
-    val dataSourceFactory = DefaultDataSourceFactory(context, "PlayBackground")
+    val dataSourceFactory : DataSource.Factory = DefaultDataSourceFactory(context, Util.getUserAgent(context, "PlayJsonTag"))
     return ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(uri)
 }
 
 fun releasePlayer() {
-    if (player != null) {
-        playWhenReady = player!!.playWhenReady
-        playBackPosition = player!!.currentPosition
-        currentWindow = player!!.currentWindowIndex
-        player!!.release()
-        player = null
-    }
+    player.release()
+    player.stop()
 }
 //////// end - Exoplayer Util /////////////
 
