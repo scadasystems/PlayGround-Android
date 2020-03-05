@@ -7,4 +7,7 @@ class Products {
     @SerializedName("products")
     @Expose
     var products: List<Product>? = null
+    @SerializedName("priceTagJapan")
+    @Expose
+    var priceTagJapan: List<PriceTagJapan>? = null
 }
