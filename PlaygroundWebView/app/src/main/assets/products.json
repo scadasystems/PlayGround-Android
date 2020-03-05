@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "field1": "252525",
+      "title": "Water Melon",
+      "price": "10900",
+      "salePrice": "null",
+      "origin": "KOREA",
+      "company": "company1",
+      "articleId": "2112270000005",
+      "left": "150",
+      "type": "tag2",
+      "ratio": "1:1"
+    },
+    {
+      "field1": "353535",
+      "title": "Pineapple",
+      "price": "2990",
+      "salePrice": "",
+      "origin": "KOREA",
+      "company": "company2",
+      "articleId": "0400206270007",
+      "left": "150",
+      "type": "tag2"
+    },
+    {
+      "field1": "454545",
+      "title": "Strawberry",
+      "price": "11900",
+      "salePrice": "9900",
+      "origin": "KOREA",
+      "company": "company3",
+      "articleId": "0400168120006",
+      "left": "150",
+      "type": "tag2"
+    },
+    {
+      "field1": "555555",
+      "title": "Banana",
+      "price": "4990",
+      "salePrice": "3490",
+      "origin": "KOREA",
+      "company": "company4",
+      "articleId": "8809137650117",
+      "left": "150",
+      "type": "tag2"
+    }
+  ]
+}
