@@ -2,7 +2,6 @@ package com.iloveintouch.demo2
 
 import android.app.Activity
 import android.content.Context
-import android.graphics.Bitmap
 import android.net.Uri
 import android.view.View
 import android.widget.ImageView
@@ -68,10 +67,9 @@ fun releasePlayer() {
 //////// end - Exoplayer Util /////////////
 
 //////// start - Glide ////////
-fun glide(context: Context, bitmap: Bitmap?, view: ImageView, width: Int, height: Int) {
+fun glide(context: Context, bitmap: String?, view: ImageView) {
     Glide.with(context)
         .load(bitmap)
-        .override(width, height)
         .skipMemoryCache(true)
         .fitCenter()
         .diskCacheStrategy(DiskCacheStrategy.ALL)
