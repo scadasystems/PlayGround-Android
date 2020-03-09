@@ -196,7 +196,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 바코드 이미지 생성
-    private fun encodeAsBitmap(contents: String?, format: BarcodeFormat?, img_width: Int, img_height: Int): Bitmap? {
+    private fun encodeAsBitmap(
+        contents: String?,
+        format: BarcodeFormat?,
+        img_width: Int,
+        img_height: Int
+    ): Bitmap? {
         val contentsToEncode = contents ?: return null
         var hints: MutableMap<EncodeHintType?, Any?>? = null
         val encoding = guessAppropriateEncoding(contentsToEncode)

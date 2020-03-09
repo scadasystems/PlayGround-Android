@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="90px"
-    android:layout_height="120px">
+    android:layout_width="100px"
+    android:layout_height="130px">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,10 +24,9 @@
             android:layout_width="0dp"
             android:layout_height="35px"
             android:layout_marginRight="2px"
-            android:autoSizeMaxTextSize="10sp"
-            android:autoSizeMinTextSize="8sp"
-            android:autoSizeTextType="uniform"
-            android:gravity="end"
+            android:textSize="9sp"
+            android:lineSpacingExtra="-2dp"
+            android:gravity="end|bottom"
             android:textColor="#000"
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/insert_product_img"
@@ -39,16 +38,13 @@
             android:id="@+id/insert_product_addition"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:autoSizeMaxTextSize="10sp"
-            android:autoSizeMinTextSize="6sp"
-            android:autoSizeTextType="uniform"
+            android:textSize="6sp"
             android:gravity="end|top"
-            android:lineSpacingExtra="-3dp"
-            android:minLines="3"
+            android:lineSpacingExtra="-2dp"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@id/ll_price"
             app:layout_constraintLeft_toRightOf="@id/insert_product_img"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintRight_toRightOf="@id/insert_product_name"
             app:layout_constraintTop_toBottomOf="@id/insert_product_name"
             tools:text="Dark Magic, tusz do rzes, czarny, 10ml" />
 
@@ -82,7 +78,7 @@
 
         </LinearLayout>
 
-        <view
+        <View
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/red"
@@ -127,5 +123,36 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/insert_product_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/insert_product_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/insert_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/insert_barcode_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/insert_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

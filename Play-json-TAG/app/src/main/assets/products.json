@@ -78,7 +78,7 @@
             "productCount": "5",
             "productWeight": "",
             "productImage": "",
-            "price": "2",
+            "price": "2.0",
             "salePrice": "",
             "barcode": "",
             "point": "48"
@@ -102,7 +102,7 @@
             "productImage": "",
             "price": "56.99",
             "salePrice": "45.59",
-            "barcode": "5480135M",
+            "barcode": "",
             "point": ""
         }
     ]
