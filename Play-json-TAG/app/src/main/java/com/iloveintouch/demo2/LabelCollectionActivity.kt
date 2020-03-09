@@ -1,7 +1,6 @@
 package com.iloveintouch.demo2
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -70,11 +69,17 @@ class LabelCollectionActivity : AppCompatActivity() {
                         productAddition.text = priceTagGermany[data].productAddition
                         productCount.text = priceTagGermany[data].productCount
                         productWeight.text = priceTagGermany[data].productWeight + "g"
-                        glide(applicationContext, priceTagGermany[data].productImage, productImage)
-                        var euro = priceTagGermany[data].price?.split(".")
-//                        Log.d("유로 -> ", euro?.get(1))
+                        if (!priceTagGermany[data].productImage.isNullOrEmpty()) {
+                            glide(applicationContext, priceTagGermany[data].productImage, productImage)
+                        }
+                        val euro = priceTagGermany[data].price?.split(".")
+                        val sale_euro = priceTagGermany[data].salePrice?.split(".")
                         price_euro.text = euro?.get(0)
-                        Log.d("센트 -> ", priceTagGermany[data].price!!)
+                        price_cent.text = euro?.get(1)
+                        if (!priceTagGermany[data].salePrice.isNullOrEmpty()) {
+                            salePrice_euro.text = sale_euro?.get(0)
+                            salePrice_cent.text = sale_euro?.get(1)
+                        }
 
                         barcode.text = priceTagGermany[data].barcode
                         point.text = priceTagGermany[data].point + "p"

@@ -37,7 +37,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/insert_product_addition"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:textSize="6sp"
             android:gravity="end|top"
             android:lineSpacingExtra="-2dp"
@@ -51,11 +51,11 @@
         <LinearLayout
             android:id="@+id/ll_price"
             android:layout_width="0dp"
-            android:layout_height="20px"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@id/ll_price_sale"
-            app:layout_constraintRight_toRightOf="@id/insert_product_name"
-            app:layout_constraintWidth_percent="0.32">
+            app:layout_constraintBottom_toTopOf="@+id/ll_price_sale"
+            app:layout_constraintEnd_toEndOf="@+id/insert_product_name"
+            app:layout_constraintWidth_percent="0.34">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/insert_price_euro"
@@ -94,6 +94,7 @@
             android:layout_marginBottom="5px"
             android:background="@color/red"
             android:orientation="horizontal"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/insert_product_img"
             app:layout_constraintRight_toRightOf="@id/insert_product_name">
@@ -102,11 +103,11 @@
                 android:id="@+id/insert_price_sale_euro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity=""
                 android:includeFontPadding="false"
-                android:textAlignment="center"
+                android:layout_gravity="start"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 tools:text="45" />
 
@@ -116,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:textColor="@color/white"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 android:textStyle="bold"
                 tools:text="59" />
 
