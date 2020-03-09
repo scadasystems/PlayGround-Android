@@ -10,4 +10,7 @@ class Products {
     @SerializedName("priceTagJapan")
     @Expose
     var priceTagJapan: List<PriceTagJapan>? = null
+    @SerializedName("priceTagGermany")
+    @Expose
+    var priceTagGermany: List<PriceTagGermany>? = null
 }

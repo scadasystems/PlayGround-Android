@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="90px"
+    android:layout_height="120px">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/insert_product_img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/insert_product_name"
+            android:layout_width="0dp"
+            android:layout_height="35px"
+            android:layout_marginRight="2px"
+            android:autoSizeMaxTextSize="10sp"
+            android:autoSizeMinTextSize="8sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="end"
+            android:textColor="#000"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/insert_product_img"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Max Factor" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/insert_product_addition"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:autoSizeMaxTextSize="10sp"
+            android:autoSizeMinTextSize="6sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="end|top"
+            android:lineSpacingExtra="-3dp"
+            android:minLines="3"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/ll_price"
+            app:layout_constraintLeft_toRightOf="@id/insert_product_img"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/insert_product_name"
+            tools:text="Dark Magic, tusz do rzes, czarny, 10ml" />
+
+        <LinearLayout
+            android:id="@+id/ll_price"
+            android:layout_width="0dp"
+            android:layout_height="20px"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/ll_price_sale"
+            app:layout_constraintRight_toRightOf="@id/insert_product_name"
+            app:layout_constraintWidth_percent="0.32">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_price_euro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="56" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_price_cent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textColor="@color/black"
+                android:textSize="6sp"
+                android:textStyle="bold"
+                tools:text="99" />
+
+        </LinearLayout>
+
+        <view
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/red"
+            app:layout_constraintBottom_toBottomOf="@id/ll_price"
+            app:layout_constraintLeft_toLeftOf="@+id/ll_price"
+            app:layout_constraintRight_toRightOf="@id/ll_price"
+            app:layout_constraintTop_toTopOf="@id/ll_price" />
+
+        <LinearLayout
+            android:id="@+id/ll_price_sale"
+            android:layout_width="0dp"
+            android:layout_height="27px"
+            android:layout_marginBottom="5px"
+            android:background="@color/red"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/insert_product_img"
+            app:layout_constraintRight_toRightOf="@id/insert_product_name">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_price_sale_euro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="45" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_price_sale_cent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:text="59" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

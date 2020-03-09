@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000"
     tools:context=".exam.TouchActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="1920px"
         android:layout_height="158px"
-        android:background="#000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +22,7 @@
             app:layout_constraintGuide_percent="0.5" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_first"
+            android:id="@+id/cv_jp_first"
             android:layout_width="250px"
             android:layout_height="150px"
             android:layout_marginRight="20dp"
@@ -196,7 +196,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_second"
+            android:id="@+id/cv_jp_second"
             android:layout_width="120px"
             android:layout_height="150px"
             android:layout_marginLeft="20dp"

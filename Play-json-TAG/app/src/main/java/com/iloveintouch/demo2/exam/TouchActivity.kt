@@ -1,6 +1,7 @@
 package com.iloveintouch.demo2.exam
 
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
@@ -9,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.iloveintouch.demo2.*
+import kotlinx.android.synthetic.main.activity_touch.*
 import retrofit2.Call
 import retrofit2.Response
 import java.text.NumberFormat
@@ -27,6 +29,16 @@ class TouchActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_touch)
 
+        val listener = View.OnTouchListener(function = { view, motionEvent ->
+            if (motionEvent.action == MotionEvent.ACTION_MOVE) {
+                view.x = motionEvent.rawX - view.width / 2
+//                view.y = motionEvent.rawY - view.height / 2
+            }
+            true
+        })
+        cv_jp_first.setOnTouchListener(listener)
+        cv_jp_second.setOnTouchListener(listener)
+
         /* Parsing */
         val api: ApiService = RetroClient.apiService
         val call = api.productJSON
@@ -41,16 +53,26 @@ class TouchActivity : AppCompatActivity() {
                     val priceTagList = response.body()!!.priceTagJapan
                     for (data in priceTagList!!.indices) {
 
-                        val tv_totalNumber = resources.getIdentifier("tv_totalNumber${data + 1}", "id", packageName)
-                        val tv_company = resources.getIdentifier("tv_company${data + 1}", "id", packageName)
-                        val tv_title = resources.getIdentifier("tv_title${data + 1}", "id", packageName)
-                        val tv_kind = resources.getIdentifier("tv_kind${data + 1}", "id", packageName)
-                        val tv_weight = resources.getIdentifier("tv_weight${data + 1}", "id", packageName)
-                        val tv_price = resources.getIdentifier("tv_price${data + 1}", "id", packageName)
-                        val tv_priceTax = resources.getIdentifier("tv_priceTax${data + 1}", "id", packageName)
-                        val ll_coupon = resources.getIdentifier("ll_coupon${data + 1}", "id", packageName)
-                        val iv_product = resources.getIdentifier("iv_product${data + 1}", "id", packageName)
-                        val tv_point = resources.getIdentifier("tv_point${data + 1}", "id", packageName)
+                        val tv_totalNumber =
+                            resources.getIdentifier("tv_totalNumber${data + 1}", "id", packageName)
+                        val tv_company =
+                            resources.getIdentifier("tv_company${data + 1}", "id", packageName)
+                        val tv_title =
+                            resources.getIdentifier("tv_title${data + 1}", "id", packageName)
+                        val tv_kind =
+                            resources.getIdentifier("tv_kind${data + 1}", "id", packageName)
+                        val tv_weight =
+                            resources.getIdentifier("tv_weight${data + 1}", "id", packageName)
+                        val tv_price =
+                            resources.getIdentifier("tv_price${data + 1}", "id", packageName)
+                        val tv_priceTax =
+                            resources.getIdentifier("tv_priceTax${data + 1}", "id", packageName)
+                        val ll_coupon =
+                            resources.getIdentifier("ll_coupon${data + 1}", "id", packageName)
+                        val iv_product =
+                            resources.getIdentifier("iv_product${data + 1}", "id", packageName)
+                        val tv_point =
+                            resources.getIdentifier("tv_point${data + 1}", "id", packageName)
 
                         val data_totalNumber = findViewById<TextView>(tv_totalNumber)
                         val data_company = findViewById<TextView>(tv_company)

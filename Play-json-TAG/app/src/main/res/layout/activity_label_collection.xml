@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1920px"
+    android:layout_height="158px"
+    tools:context=".LabelCollectionActivity">
+
+    <include
+        android:id="@+id/label_germany_type1"
+        layout="@layout/label_germany_type1"
+        android:layout_width="400px"
+        android:layout_height="130px"
+        android:layout_marginLeft="100px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/label_germany_type2"
+        layout="@layout/label_germany_type2"
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:layout_marginLeft="100px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/label_germany_type1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/label_germany_type3"
+        layout="@layout/label_germany_type3"
+        android:layout_width="90px"
+        android:layout_height="120px"
+        android:layout_marginLeft="100px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/label_germany_type2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

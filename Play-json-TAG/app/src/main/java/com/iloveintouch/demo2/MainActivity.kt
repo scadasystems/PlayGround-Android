@@ -8,7 +8,6 @@ import android.graphics.Paint
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
@@ -80,18 +79,17 @@ class MainActivity : AppCompatActivity() {
         )
         setContentView(R.layout.activity_main)
 
-        val listener = View.OnTouchListener(function = { view, motionEvent ->
-            if (motionEvent.action == MotionEvent.ACTION_MOVE) {
-                view.x = motionEvent.rawX - view.width / 2
-                view.y = motionEvent.rawY - view.height / 2
-            }
-            true
-        })
-
-        price_tag1.setOnTouchListener(listener)
-        price_tag2.setOnTouchListener(listener)
-        price_tag3.setOnTouchListener(listener)
-        price_tag4.setOnTouchListener(listener)
+//        val listener = View.OnTouchListener(function = { view, motionEvent ->
+//            if (motionEvent.action == MotionEvent.ACTION_MOVE) {
+//                view.x = motionEvent.rawX - view.width / 2
+////                view.y = motionEvent.rawY - view.height / 2
+//            }
+//            true
+//        })
+//        price_tag1.setOnTouchListener(listener)
+//        price_tag2.setOnTouchListener(listener)
+//        price_tag3.setOnTouchListener(listener)
+//        price_tag4.setOnTouchListener(listener)
 
         // 종료
         btn_exit.setOnClickListener {
@@ -241,26 +239,6 @@ class MainActivity : AppCompatActivity() {
     // end
 
     private fun exo_play_start() {
-        /* 1st route */
-//        fun exo_video_route(index: Int): String {
-//            var asset_videos = arrayOf("first_video", "second_video", "third_video", "fourth_video")
-//            var asset_route = "asset:///${asset_videos[index]}.mp4"
-//            return asset_route
-//        }
-//        val video_view = arrayOf(
-//            "exo_first_view",
-//            "exo_second_view",
-//            "exo_third_view",
-//            "exo_fourth_view"
-//        )
-//        for (i in video_view.indices) {
-//            val temp = resources.getIdentifier(video_view[i], "id", packageName)
-//            playerViews[i] = findViewById(temp)
-//            initializePlayer(applicationContext, playerViews[i], exo_video_route(i))
-//        }
-        /* 1st route */
-
-        /* 2nd route */
         val asset_first_route = "asset:///first_video.mp4"
         val asset_second_route = "asset:///second_video.mp4"
         val asset_third_route = "asset:///third_video.mp4"
@@ -270,7 +248,5 @@ class MainActivity : AppCompatActivity() {
         initializePlayer(applicationContext, exo_second_view, asset_second_route)
         initializePlayer(applicationContext, exo_third_view, asset_third_route)
         initializePlayer(applicationContext, exo_fourth_view, asset_fourth_route)
-        /* 2nd route */
     }
-
 }

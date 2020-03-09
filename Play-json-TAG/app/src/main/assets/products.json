@@ -70,5 +70,40 @@
             "point": "40",
             "appCoupon": true
         }
+    ],
+    "priceTagGermany": [
+        {
+            "productName": "Heinz Baby Cans",
+            "productAddition": "",
+            "productCount": "5",
+            "productWeight": "",
+            "productImage": "",
+            "price": "2",
+            "salePrice": "",
+            "barcode": "",
+            "point": "48"
+        },
+        {
+            "productName": "Planet Organic Goji Energise Bar",
+            "productAddition": "",
+            "productCount": "",
+            "productWeight": "30",
+            "productImage": "",
+            "price": "1.45",
+            "salePrice": "",
+            "barcode": "5480135M",
+            "point": ""
+        },
+        {
+            "productName": "Max Factor",
+            "productAddition": "Dark Magic, tusz do rzes, czarny, 10ml",
+            "productCount": "",
+            "productWeight": "30",
+            "productImage": "",
+            "price": "56.99",
+            "salePrice": "45.59",
+            "barcode": "5480135M",
+            "point": ""
+        }
     ]
 }
