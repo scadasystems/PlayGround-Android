@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.iloveintouch.demo2.*
+import com.iloveintouch.demo2.util.glide
 import kotlinx.android.synthetic.main.activity_touch.*
 import retrofit2.Call
 import retrofit2.Response
@@ -98,7 +99,11 @@ class TouchActivity : AppCompatActivity() {
                         } else {
                             data_coupon.visibility = View.GONE
                         }
-                        glide(applicationContext, priceTagList[data].images, data_productImage)
+                        glide(
+                            applicationContext,
+                            priceTagList[data].images,
+                            data_productImage
+                        )
                         data_point.text = priceTagList[data].point
                     }
                 }

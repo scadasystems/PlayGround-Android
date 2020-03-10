@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200px"
+    android:layout_height="140px"
+    tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_top"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/dark_orange"
+            android:padding="5px"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.6">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/insert_card1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/icon_container"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/insert_card2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/insert_card2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/icon_container"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/insert_card1"
+                    app:layout_constraintRight_toLeftOf="@id/insert_card3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/insert_card3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/icon_container"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/insert_card2"
+                    app:layout_constraintRight_toLeftOf="@id/insert_card4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/insert_card4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/icon_container"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/insert_card3"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_cardMember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="카드고객"
+                android:textColor="@color/black"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_container" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_sale_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="20"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/container_top"
+                app:layout_constraintRight_toRightOf="@id/card_container"
+                app:layout_constraintTop_toBottomOf="@id/card_container" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:includeFontPadding="false"
+                android:text="%"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/insert_sale_percent"
+                app:layout_constraintTop_toTopOf="@id/insert_sale_percent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="할인"
+                android:textColor="@color/black"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/insert_sale_percent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/insert_company_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/icon_container"
+            app:layout_constraintRight_toRightOf="@id/container_top"
+            app:layout_constraintTop_toTopOf="@id/container_top" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="회사\n이미지"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/insert_company_logo"
+            app:layout_constraintLeft_toLeftOf="@id/insert_company_logo"
+            app:layout_constraintRight_toRightOf="@id/insert_company_logo"
+            app:layout_constraintTop_toTopOf="@id/insert_company_logo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingLeft="10px"
+            android:paddingTop="5px"
+            android:paddingRight="10px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_top">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="국내산 돈 삼겹 구이/수육용"
+                android:textColor="@color/black"
+                android:textSize="8sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_product_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100g"
+                android:textColor="@color/black"
+                android:textSize="8sp"
+                app:layout_constraintLeft_toRightOf="@id/insert_product_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_origin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원산지:"
+                android:textColor="@color/black"
+                android:textSize="5sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/insert_product_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_product_origin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1px"
+                android:text="국내산 돼지고기"
+                android:textColor="@color/black"
+                android:textSize="5sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_origin"
+                app:layout_constraintLeft_toRightOf="@id/tv_origin"
+                app:layout_constraintTop_toTopOf="@id/tv_origin" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10px"
+                android:includeFontPadding="false"
+                android:text="일반고객구입가"
+                android:textColor="@color/black"
+                android:textSize="3sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/insert_price"
+                app:layout_constraintRight_toLeftOf="@id/insert_price" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="10px"
+                android:includeFontPadding="false"
+                android:text="1800"
+                android:textColor="@color/black"
+                android:textSize="8sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/insert_product_weight" />
+
+            <View
+                android:id="@+id/view_cancel"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/arrow"
+                app:layout_constraintLeft_toLeftOf="@id/insert_price"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/insert_price"
+                app:layout_constraintTop_toTopOf="@id/insert_price"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/insert_price_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1440"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

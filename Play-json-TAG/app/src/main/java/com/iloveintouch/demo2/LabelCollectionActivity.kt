@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import com.iloveintouch.demo2.util.glide
 import retrofit2.Call
 import retrofit2.Response
 
@@ -68,9 +69,13 @@ class LabelCollectionActivity : AppCompatActivity() {
                         productName.text = priceTagGermany[data].productName
                         productAddition.text = priceTagGermany[data].productAddition
                         productCount.text = priceTagGermany[data].productCount
-                        productWeight.text = priceTagGermany[data].productWeight + "g"
+                        productWeight.text = "${priceTagGermany[data].productWeight}g"
                         if (!priceTagGermany[data].productImage.isNullOrEmpty()) {
-                            glide(applicationContext, priceTagGermany[data].productImage, productImage)
+                            glide(
+                                applicationContext,
+                                priceTagGermany[data].productImage,
+                                productImage
+                            )
                         }
                         val euro = priceTagGermany[data].price?.split(".")
                         val sale_euro = priceTagGermany[data].salePrice?.split(".")
@@ -82,7 +87,7 @@ class LabelCollectionActivity : AppCompatActivity() {
                         }
 
                         barcode.text = priceTagGermany[data].barcode
-                        point.text = priceTagGermany[data].point + "p"
+                        point.text = "${priceTagGermany[data].point}p"
                     }
                 }
             }

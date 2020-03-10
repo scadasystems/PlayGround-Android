@@ -2,8 +2,6 @@ package com.iloveintouch.demo2
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
-import android.graphics.Color.BLACK
-import android.graphics.Color.TRANSPARENT
 import android.graphics.Paint
 import android.os.Build
 import android.os.Bundle
@@ -15,60 +13,18 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.android.exoplayer2.ui.PlayerView
 import com.google.zxing.BarcodeFormat
-import com.google.zxing.EncodeHintType
-import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
-import com.google.zxing.common.BitMatrix
+import com.iloveintouch.demo2.util.CustomBarcode
+import com.iloveintouch.demo2.util.CustomExoplayer
+import com.iloveintouch.demo2.util.CustomExoplayer.initializePlayer
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Response
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private val TAG = MainActivity::class.java.simpleName
-    private val playerViews = arrayOfNulls<PlayerView>(4)
-    // Exoplayer 변수
-//    private var playWhenReady = true
-//    private var currentWindow = 0
-//    private var playbackPostion = 0L
     private lateinit var player: SimpleExoPlayer
-
-    override fun onStart() {
-        super.onStart()
-        if (Build.VERSION.SDK_INT > 23) {
-            exo_play_start()
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        if (Build.VERSION.SDK_INT <= 23) {
-            exo_play_start()
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        if (Build.VERSION.SDK_INT > 23) {
-            if (player.isPlaying) releasePlayer()
-        }
-    }
-
-    override fun onStop() {
-        super.onStop()
-        if (Build.VERSION.SDK_INT > 23) {
-            if (player.isPlaying) releasePlayer()
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if (Build.VERSION.SDK_INT > 23) {
-            if (player.isPlaying) releasePlayer()
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -178,7 +134,7 @@ class MainActivity : AppCompatActivity() {
                         var bitmap: Bitmap?
 
                         try {
-                            bitmap = encodeAsBitmap(
+                            bitmap = CustomBarcode.encodeAsBitmap(
                                 productList[data].articleId,
                                 BarcodeFormat.CODE_128,
                                 1500,
@@ -195,54 +151,6 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    // 바코드 이미지 생성
-    private fun encodeAsBitmap(
-        contents: String?,
-        format: BarcodeFormat?,
-        img_width: Int,
-        img_height: Int
-    ): Bitmap? {
-        val contentsToEncode = contents ?: return null
-        var hints: MutableMap<EncodeHintType?, Any?>? = null
-        val encoding = guessAppropriateEncoding(contentsToEncode)
-        if (encoding != null) {
-            hints = EnumMap<EncodeHintType, Any>(EncodeHintType::class.java)
-            hints[EncodeHintType.CHARACTER_SET] = encoding
-        }
-        val writer = MultiFormatWriter()
-        val result: BitMatrix
-        result = try {
-            writer.encode(contentsToEncode, format, img_width, img_height, hints)
-        } catch (iae: IllegalArgumentException) { // Unsupported format
-            return null
-        }
-        val width = result.width
-        val height = result.height
-        val pixels = IntArray(width * height)
-        for (y in 0 until height) {
-            val offset = y * width
-            for (x in 0 until width) {
-                pixels[offset + x] = if (result[x, y]) BLACK else TRANSPARENT
-            }
-        }
-        val bitmap = Bitmap.createBitmap(
-            width, height,
-            Bitmap.Config.ARGB_8888
-        )
-        bitmap.setPixels(pixels, 0, width, 0, 0, width, height)
-        return bitmap
-    }
-
-    private fun guessAppropriateEncoding(contents: CharSequence): String? {
-        for (element in contents) {
-            if (element.toInt() > 0xFF) {
-                return "UTF-8"
-            }
-        }
-        return null
-    }
-    // end
-
     private fun exo_play_start() {
         val asset_first_route = "asset:///first_video.mp4"
         val asset_second_route = "asset:///second_video.mp4"
@@ -254,4 +162,40 @@ class MainActivity : AppCompatActivity() {
         initializePlayer(applicationContext, exo_third_view, asset_third_route)
         initializePlayer(applicationContext, exo_fourth_view, asset_fourth_route)
     }
+
+    override fun onStart() {
+        super.onStart()
+        if (Build.VERSION.SDK_INT > 23) {
+            exo_play_start()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (Build.VERSION.SDK_INT <= 23) {
+            exo_play_start()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (Build.VERSION.SDK_INT > 23) {
+            if (player.isPlaying) CustomExoplayer.releasePlayer()
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        if (Build.VERSION.SDK_INT > 23) {
+            if (player.isPlaying) CustomExoplayer.releasePlayer()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (Build.VERSION.SDK_INT > 23) {
+            if (player.isPlaying) CustomExoplayer.releasePlayer()
+        }
+    }
+
 }
